@@ -1,0 +1,36 @@
+/* CSS declarations go here */
+img {
+	width: 400px;
+	display: block;
+}
+
+.item {
+	margin-top: 20px;
+	max-width: 800px;
+}
+.itemImage, .itemBid {
+	display: inline-block;
+	float: left;
+}
+.itemImage p {
+	text-align: center; 
+}
+.bid {
+	float: left;
+}
+.user-name {
+	margin: 0 0 0 10px;
+	display: block;
+	float: left;
+
+}
+.itemBid .button {
+	clear: left;
+    display: block;
+    float: left;
+    margin-top: 25px;
+}
+#login-buttons {
+	position: absolute;
+	right: 10px;
+}

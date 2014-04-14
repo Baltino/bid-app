@@ -1,0 +1,74 @@
+<head>
+  <title>vote-app</title>
+</head>
+
+<body>
+	{{> navbar}}
+	{{> loginButtons align="right"}}
+	{{#if currentUser}}
+		{{> audio}}
+		{{> page}}
+	{{/if}}
+
+</body>
+
+<template name="audio">
+	{{#unless isIE}}
+		<audio id="kick" >
+	       <source src="sounds/kick.ogg" type="audio/ogg" />
+	       <source src="sounds/kick.wav" type="audio/wav" />
+	       <source src="sounds/kick.mp3" type="audio/wav" />
+	       
+	   </audio>
+	{{/unless}}
+	{{#if isIE}}
+   		<bgsound id="kick" src="sounds/kick.mp3" loop="1" > </bgsound> 
+   	{{/if}}
+   	
+</template>
+
+<template name="page">
+	{{#with currentItem}}
+  		<div class="item row">
+			<div class="itemImage">
+				<img src="img/{{src}}.png" />
+				<p class="text">{{info}}</p>
+			</div>
+			<div class="itemBid">
+				<h3>Actual Bid</h3>
+				<div class="bid">{{value}} $</div>
+				<span class="user-name radius secondary label">made by {{lastBidUser}} </span>
+				<a href="#" class="button">Up bid by 1$</a>
+			</div>
+		</div>
+  	{{/with}}
+</template>
+
+<template name="navbar">
+	<nav class="top-bar" data-topbar data-options="is_hover: false">
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="#">Bids-app</a></h1>
+			</li>
+		</ul>
+
+		<section class="top-bar-section">
+			{{#if currentUser}}
+				<!-- Right Nav Section -->
+				<ul class="right">
+					<!-- li class="active"><a href="#">Right Button Active</a></li -->
+					<li id="items-dropdown" class="has-dropdown">
+						{{#with currentItem}}
+							<a href="#" id="{{id}}">{{name}}</a>
+						{{/with}}
+						<ul class="dropdown">
+							{{#each items}}
+								<li><a href="#" id="{{id}}">{{name}}</a></li>
+							{{/each}}
+						</ul>
+					</li>
+				</ul>
+			{{/if}}
+		</section>
+	</nav>
+</template>
