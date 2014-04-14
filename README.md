@@ -1,4 +1,4 @@
-Bid-app
+Betting-app
 =======
 
 First steps with meteor
