@@ -14,7 +14,7 @@
 
 <template name="audio">
 	{{#unless isIE}}
-		<audio id="kick" >
+		<audio id="kick" {{play}}>
 	       <source src="sounds/kick.ogg" type="audio/ogg" />
 	       <source src="sounds/kick.wav" type="audio/wav" />
 	       <source src="sounds/kick.mp3" type="audio/wav" />

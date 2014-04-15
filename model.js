@@ -28,15 +28,8 @@ if (Meteor.isServer) {
 
 if(Meteor.isClient) {
   $(document).ready(function(){
-    var query = Items.find({}),
-      audioTag = document.getElementById('kick'),
-      handle = query.observe({
-        changed: function(item) {
-          
-          audioTag.play();
-        }
-      });
 
+    
     $(this).foundation();
       
   });
